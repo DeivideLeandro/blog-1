@@ -11,6 +11,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
 Route::post('/categoria', [CategoriaController::class, 'store'])->name('categoria.store');
@@ -26,4 +27,4 @@ Route::post('/postagem', [PostagemController::class, 'store'])->name('postagem.s
 Route::get('/postagem/{id}', [PostagemController::class, 'show'])->name('postagem.show');
 Route::get('/postagem/{id}/edit', [PostagemController::class, 'edit'])->name('postagem.edit');
 Route::put('/postagem/{id}', [PostagemController::class, 'update'])->name('postagem.update');
-Route::delete('/postagem/{id}', [PostagemController::class, 'destroy'])->name('postagem.destroy');
+

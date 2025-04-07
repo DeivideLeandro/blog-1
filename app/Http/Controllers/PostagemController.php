@@ -14,7 +14,8 @@ class PostagemController extends Controller
     public function index()
     {
         $postagens = Postagem::orderBy('titulo', 'ASC')->get();
-        return view ('postagem.postagem_index', compact('postagens'));
+        return view('postagem.postagem_index', compact('postagens'));
+
     }
 
     /**
@@ -23,7 +24,7 @@ class PostagemController extends Controller
     public function create()
     {
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        return view ('postagem.postagem_create', compact('categorias'));
+        return view('postagem.postagem_create', compact('categorias'));
     }
 
     /**
@@ -66,12 +67,14 @@ class PostagemController extends Controller
      */
     public function edit(string $id)
     {
-        $postagem=Postagem::find($id);
+        $postagem = Postagem::find($id);
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         return view('postagem.postagem_edit', compact('postagem', 'categorias'));
     }
 
-    //Alterar
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, string $id)
     {
         $messages = [
@@ -84,7 +87,6 @@ class PostagemController extends Controller
             'descricao' => 'required',
         ], $messages);
 
-        //dd($request->all());
         $postagem = Postagem::find($id);
         $postagem->categoria_id = $request->categoria_id;
         $postagem->titulo = $request->titulo;
@@ -94,7 +96,9 @@ class PostagemController extends Controller
         return redirect()->route('postagem.index')->with('message', 'Postagem atualizada com sucesso!');
     }
 
-    //Deletar
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(string $id)
     {
         $postagem = Postagem::find($id);

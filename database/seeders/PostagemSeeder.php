@@ -6,7 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-
 class PostagemSeeder extends Seeder
 {
     /**
@@ -14,7 +13,6 @@ class PostagemSeeder extends Seeder
      */
     public function run(): void
     {
-
         DB::table('postagens')->insert([
             'categoria_id' => 1,
             'titulo' => 'Postagem 1',
@@ -38,6 +36,8 @@ class PostagemSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+
 
     }
 }

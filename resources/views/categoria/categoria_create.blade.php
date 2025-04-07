@@ -8,7 +8,6 @@
                 <div class="card-header">Novos produtos</div> <!-- Fechamento correto da tag div -->
 
                 <div class="card-body">
-
                 <!-- /resources/views/post/create.blade.php -->
                      @if ($errors->any())
                      <div class="alert alert-danger">
@@ -24,10 +23,20 @@
                     <form action="{{ url('categoria') }}" method="post">
                         @csrf  <!-- Protege o formulário contra CSRF -->
 
+
+                <!-- Create Post Form -->
+                    <form action="{{ url('categoria') }}" method="post">
+                        @csrf  <!-- Protege o formulário contra CSRF -->
+
                         <div class="form-group">
                             <label for="nome">Nome da Categoria: </label>
                             <input type="text" id="nome" name="nome" class="form-control">
                         </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+
+                    </form>
+
 
                         <button type="submit" class="btn btn-primary">Enviar</button>
 
@@ -39,3 +48,5 @@
     </div>
 </div>
 @endsection
+@endsection
+
