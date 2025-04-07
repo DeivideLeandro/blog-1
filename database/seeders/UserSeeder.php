@@ -1,4 +1,3 @@
-
 <?php
 
 namespace Database\Seeders;
@@ -16,9 +15,9 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'name' => 'Ana Aline',
-            'email' => 'analinemr2@gmail.com',
-            'password' => Hash::make('12345678'),
+            'name' => 'Deivide Leandro',
+            'email' => 'resendecostense@gmail.com',
+            'password' => Hash::make('20252025'),
         ]);
     }
 }
