@@ -21,9 +21,3 @@ class UserSeeder extends Seeder
         ]);
     }
 }
-            'name' => 'Ana Aline',
-            'email' => 'analinemr2@gmail.com',
-            'password' => Hash::make('12345678'),
-        ]);
-    }
-}
