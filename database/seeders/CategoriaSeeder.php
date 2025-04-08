@@ -29,4 +29,3 @@ class CategoriaSeeder extends Seeder
         ]);
     }
 }
-}

@@ -27,4 +27,5 @@ Route::post('/postagem', [PostagemController::class, 'store'])->name('postagem.s
 Route::get('/postagem/{id}', [PostagemController::class, 'show'])->name('postagem.show');
 Route::get('/postagem/{id}/edit', [PostagemController::class, 'edit'])->name('postagem.edit');
 Route::put('/postagem/{id}', [PostagemController::class, 'update'])->name('postagem.update');
+Route::delete('/postagem/{id}', [PostagemController::class, 'destroy'])->name('postagem.destroy');
 
